@@ -15,7 +15,7 @@ module.exports = function($window, redrawService) {
 			if (render != null) redrawService.render(root, render(Vnode(component, attrs.key, attrs)))
 		}
 		var bail = function() {
-			routeService.setPath(defaultRoute)
+			route.set(defaultRoute)
 		}
 		routeService.defineRoutes(routes, function(payload, params, path) {
 			var update = lastUpdate = function(routeResolver, comp) {
