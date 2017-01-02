@@ -132,9 +132,7 @@ users.map(function(u) {
 
 // PREFER
 users.map(function(u) {
-	return {tag: "[", key: u.id, children: [
-		m("button", u.name)
-	]}
+	return m.fragment({key: u.id}, m("button", u.name))
 })
 ```
 
@@ -147,8 +145,8 @@ You should use either strings or numbers as keys in one array, but not mix both.
 ```javascript
 // AVOID
 var things = [
-	{id: "1", name: "Book"},
-	{id: 1, name: "Cup"},
+	{key: "1", name: "Book"},
+	{key: 1, name: "Cup"},
 ]
 ```
 
